@@ -3,16 +3,17 @@
 {{ $promo_disclaimer := "" }}
 
 {{ if and ($.Page.Params.promo_code) ($.Page.Params.promo_code_amount) }}
-  {{ $promo_code = $.Page.Params.promo_code }}
-  {{ $promo_amount = $.Page.Params.promo_code_amount }}
-  {{ $promo_disclaimer = $.Page.Params.promo_code_disclaimer }}
+{{ $promo_code = $.Page.Params.promo_code }}
+{{ $promo_amount = $.Page.Params.promo_code_amount }}
+{{ $promo_disclaimer = $.Page.Params.promo_code_disclaimer }}
 {{ else }}
-  {{ $promo_code = $.Page.Site.Params.promo_code }}
-  {{ $promo_amount = $.Page.Site.Params.promo_code_amount }}
-  {{ $promo_disclaimer = $.Page.Site.Params.promo_code_disclaimer }}
+{{ $promo_code = $.Page.Site.Params.promo_code }}
+{{ $promo_amount = $.Page.Site.Params.promo_code_amount }}
+{{ $promo_disclaimer = $.Page.Site.Params.promo_code_disclaimer }}
 {{ end }}
 
-<a href="https://login.linode.com/signup?promo={{ $promo_code }}">
+
+<a href="https://login.sitebay.com/signup?promo={{ $promo_code }}">
   Sign up today
 </a>
 and receive a ${{ $promo_amount }} credit. {{ $promo_disclaimer }}
